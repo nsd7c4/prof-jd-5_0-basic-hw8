@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class Main {
     //Assignment 1
-    public static void isLeapYear(int year){
+    public static void isLeapYear(int year) {
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
             System.out.println(year + " is a leap year!");
         } else {
@@ -14,7 +14,7 @@ public class Main {
     }
 
     //Assignment 2
-    public static void versionSelect(int year, int clientOS){
+    public static void versionSelect(int year, int clientOS) {
         int currentYear = LocalDate.now().getYear();
         if (clientOS == 1) {
             if (year >= currentYear) {
@@ -22,7 +22,7 @@ public class Main {
             } else {
                 System.out.println("Please install Lite Android App, link here");
             }
-        } else if (clientOS == 0){
+        } else if (clientOS == 0) {
             if (year >= currentYear) {
                 System.out.println("Please install iOS App, link here");
             } else {
@@ -34,7 +34,7 @@ public class Main {
     }
 
     //Assignment 3
-    public static int distanceEstimator(int deliveryDistance){
+    public static int distanceEstimator(int deliveryDistance) {
         int deliveryDays = 1;
         if (deliveryDistance > 20) deliveryDays++;
         if (deliveryDistance > 60) deliveryDays++;
@@ -44,20 +44,20 @@ public class Main {
     }
 
     //Assignment 4
-    public static void uniqueCharValidator(String toValidate){
+    public static void uniqueCharValidator(String toValidate) {
         //StringBuilder sb = new StringBuilder();
         boolean haveDoubles = false;
         char[] arr = toValidate.toCharArray();
-        int i = 0;
+        int i;
         for (i = 0; i < arr.length - 1; i++) {
-            if (arr[i] == arr[i+1]){
+            if (arr[i] == arr[i + 1]) {
                 //sb.append(arr[i]);
                 haveDoubles = true;
                 break;
             }
         }
         if (haveDoubles) {
-            System.out.printf("String does have a double character \"%c\" at pos %d!",arr[i],i+1);
+            System.out.printf("String does have a double character \"%c\" at pos %d!", arr[i], i + 1);
         } else {
             System.out.print("String doesn't have double!");
         }
@@ -65,7 +65,7 @@ public class Main {
     }
 
     //Assignment 5
-    public static void invertArray(int[] arrayToInvert){
+    public static void invertArray(int[] arrayToInvert) {
         int tempV;
         for (int i = 0; i < arrayToInvert.length / 2; i++) {
             tempV = arrayToInvert[i];
@@ -84,17 +84,17 @@ public class Main {
         return arr;
     }
 
-    public static int sumOfAllElements(int[] arr){
+    public static int sumOfAllElements(int[] arr) {
         int sum = 0;
-        for (int element: arr){
+        for (int element : arr) {
             sum += element;
         }
         return sum;
     }
 
-    public static float averageFromArray(int[] arr){
-        float average = 0.0f;
-        average = sumOfAllElements(arr)*1f/(arr.length * 1f);
+    public static float averageFromArray(int[] arr) {
+        float average;
+        average = sumOfAllElements(arr) * 1f / (arr.length * 1f);
         return average;
     }
 
@@ -112,7 +112,7 @@ public class Main {
         uniqueCharValidator("aabccddefgghiijjkk");
 
         //Assignment 5
-        int[] array1 = {5,4,3,2,1};
+        int[] array1 = {5, 4, 3, 2, 1};
         invertArray(array1);
         System.out.println(Arrays.toString(array1));
 
